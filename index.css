@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@400;500;700&display=swap');
 
 body {
-  width: 100%;
+  width: 1920px;
+  margin: 0 auto;
 }
 
 ul,
@@ -66,7 +67,6 @@ main .top-content {
   justify-content: space-center;
   align-items: center;
   box-sizing: border-box;
-  height: 580px;
   margin: 150px 128px 250px;
 }
 
@@ -110,10 +110,15 @@ main .top-content .poster img {
   height: 580px;
 }
 
+main .mid-content {
+  display: flex;
+  flex-direction: column;
+}
 main .mid-content .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 24px;
 }
 
 main .mid-content .title .large-title {
@@ -125,12 +130,20 @@ main .mid-content .title .small-title {
   font: italic 28px 'Poppins';
   font-weight: 400;
   margin-top: 46px;
+  margin-left: 18px;
+}
+
+main .mid-content .title .arrow {
+  margin-top: 48px;
+  margin-left: 6px;
+  color: #666666;
 }
 
 main .pictures {
   display: flex;
   flex-direction: row;
   margin-top: 64px;
+  flex-wrap: nowrap;
 }
 
 main .pictures .pc-one {
@@ -174,19 +187,17 @@ main .pictures .pc-one p {
 }
 
 main .pictures .pc-two {
+  position: relative;
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-main .pictures .pc-two .pc-two-wrapper {
-  position: relative;
+  margin-left: -16px;
   width: 904px;
   height: 870px;
   border-radius: 24px;
 }
 
-main .pictures .pc-two .pc-two-wrapper .shadow-block {
+main .pictures .pc-two .shadow-block {
   position: absolute;
   width: 810px;
   height: 100px;
@@ -201,17 +212,251 @@ main .pictures .pc-two .pc-two-wrapper .shadow-block {
   bottom: -6px;
 }
 
-main .pictures .pc-two .pc-two-wrapper img {
+main .pictures .pc-two img {
   display: block;
   margin: 0 auto;
   border-radius: 24px;
 }
 
-main .pictures .pc-two .pc-two-wrapper .sold-number-pc2 {
+main .pictures .pc-two .arrow-tag {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  right: 66px;
+  top: 160px;
+}
+
+main .pictures .pc-two .sold-number-pc2 {
   position: absolute;
   font-size: 24px;
   font-weight: 500;
   color: #ffffff;
   left: 80px;
   bottom: 32px;
+}
+
+main .pictures .pc-two .pic-category {
+  position: absolute;
+  width: 195px;
+  height: 32px;
+  font-size: 16px;
+  margin-top: 83px;
+  margin-left: 92px;
+  border: 1px solid;
+  border-radius: 30px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  line-height: 32px;
+}
+
+main .pictures .pc-two .date {
+  position: absolute;
+  width: 135px;
+  height: 32px;
+  margin-top: 36px;
+  margin-left: 92px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 32px;
+}
+
+main .pictures .pc-three {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-left: 14px;
+}
+main .pictures .pc-three img {
+  position: absolute;
+  margin-top: 128px;
+}
+
+main .pictures .pc-three .sold-number-pc3 {
+  position: absolute;
+  margin-top: 630px;
+  margin-left: 34px;
+  color: #ffffff;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+main .pictures .pc-three .pic-category {
+  position: absolute;
+  margin-top: 722px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+main .pictures .pc-three p {
+  position: absolute;
+  margin-top: 770px;
+  font-size: 36px;
+  color: #000000;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+main .try-picnic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+main .mid-content .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 84px;
+}
+
+main .mid-content .buttons .btn-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1664px;
+  height: 240px;
+  border-radius: 24px;
+  background: #f2f4f5;
+  font-size: 50px;
+  font-weight: 500;
+  color: #000000;
+}
+
+main .mid-content .buttons .btn-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1664px;
+  height: 240px;
+  border-radius: 24px;
+  background: #f2f4f5;
+  font-size: 50px;
+  font-weight: 500;
+  color: #000000;
+}
+
+main .mid-content .buttons .btn-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1664px;
+  height: 240px;
+  border-radius: 24px;
+  background: #64f4ab;
+}
+
+main .mid-content .buttons .sentence {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 1600px;
+  height: 176px;
+  font-size: 28px;
+  font-weight: 400;
+  color: #000000;
+}
+
+main .mid-content .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+main .mid-content .about-content {
+  display: flex;
+  flex-direction: row;
+}
+
+main .mid-content .about-content .about-left {
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+  margin-left: 128px;
+}
+
+main .mid-content .about-content .about-left h2 {
+  font-size: 42px;
+  font-weight: 600;
+  color: #000000;
+}
+
+main .mid-content .about-content .about-left p {
+  width: 859px;
+  height: 252px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  margin-right: 149px;
+}
+
+main .mid-content .about-content .about-left button {
+  width: 306px;
+  height: 84px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  border: 2px solid #64f4ab;
+  background: #ffffff;
+  color: #0dac5b;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  font-size: 30px;
+}
+
+main .mid-content .about-right {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+main .mid-content .about-content .about-right-img {
+  width: 656px;
+  border-radius: 48px;
+}
+
+main .mid-content .about-content .about-right .metaverse {
+  position: absolute;
+  margin-left: 73px;
+  z-index: 2;
+}
+
+main .mid-content .about-content .about-right .rectangle {
+  position: absolute;
+  width: 269px;
+  height: 269px;
+  background: #64f4ab;
+  margin: 336px 371px 51px 89px;
+  z-index: 1;
+}
+
+main footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+main footer hr {
+  position: absolute;
+  top: -6px;
+  width: 930px;
+  height: 2px;
+  border-radius: 1px;
+  background: #f2f4f5;
+}
+
+main footer p {
+  width: 647px;
+  height: 60px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 90px;
+  margin-bottom: 151px;
 }

@@ -502,6 +502,28 @@ main .about .about-content .about-right .rectangle {
   z-index: 4;
 }
 
+main footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12.5rem;
+}
+
+main footer hr {
+  width: 48.4vw;
+  height: 0.18vh;
+  border-radius: 0.0625rem;
+  border: 1px solid;
+  color: #f2f4f5;
+  margin-bottom: 5.625rem;
+}
+
+main footer p {
+  text-align: center;
+  font-size: 0.73vw;
+}
+
 .mob {
   display: none;
 }

@@ -12,9 +12,46 @@
   <title>Picnic</title>
   <link rel="stylesheet" href="index.css">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script type="module">
+    import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.2.3/ethers.min.js"
+    const connectButton = document.getElementById("wallet")
+
+    //show address if already connected
+    if (connectButton) {
+      connectButton.addEventListener("click", async () => {
+        if (window.ethereum) {
+          try {
+            const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
+
+            const address = accounts[0]
+            const web3Provider = new ethers.BrowserProvider(window.ethereum)
+
+            if (address) {
+              connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
+            }
+            console.log("wallet connect:", web3Provider)
+
+          } catch (err) {
+            console.error("connect error:", err)
+          }
+        } else {
+          console.error("no meatamask found")
+        }
+      })
+      //listen to account change
+      window.ethereum.on('accountsChanged', (accounts) => {
+        if (accounts.length === 0) {
+          connectButton.innerText = 'Connect Wallet'
+        } else {
+          const address = accounts[0]
+          connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
+        }
+      })
+    }
+  </script>
 </head>
 
-<body>
+<body id="container">
   <header class="pc">
     <a href="#">
       <img class='logo' src="./assets/logo.png" alt="logo">
@@ -22,18 +59,18 @@
 
     <nav>
       <ul>
-        <li>All Posts</li>
-        <li>Curate</li>
-        <li>Write</li>
-        <li>My Profiles</li>
+        <li><a href="#">All Posts</a></li>
+        <li><a href="#">Curate</a></li>
+        <li><a href="#">Write</a></li>
+        <li><a href="#">My Profiles</a></li>
       </ul>
     </nav>
 
     <div class="header-buttons">
-      <button class="light-dark-model">
+      <button class="light-dark-model" id="toggle-theme-btn">
         <img src="./assets/dark.png" alt="light-dark-model">
       </button>
-      <button class="wallet">Connect Wallet</button>
+      <button class="wallet" id="wallet">Connect Wallet</button>
     </div>
   </header>
 
@@ -135,8 +172,8 @@
     </div>
 
     <div class="buttons">
-      <div class="btn-1">Write</div>
-      <div class="btn-2">discover</div>
+      <button class="btn-1">Write</button>
+      <button class="btn-2">discover</button>
       <div class="btn-3">
         <p class="sentence">Share stories you love, help creators grow their audience, and get a cut from the
           transaction proceeds. Traditional centralized distribution methods, such as algorithmic feeds, are
@@ -189,5 +226,9 @@
   </main>
 
 </body>
+
+<script src="./themeChange.js"></script>
+
+
 
 </html>

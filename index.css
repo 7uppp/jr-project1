@@ -14,11 +14,26 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: blue;
+}
+
+a:visited {
+  color: none;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+#container[data-theme='light'] {
+  background-color: white;
+  color: black;
+}
+
+/* 黑夜主题 */
+#container[data-theme='dark'] {
+  background-color: #999999;
+  color: white;
 }
 
 .pc {
@@ -45,6 +60,13 @@ button:hover {
 .pc nav ul li {
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+.pc nav ul li a {
+  color: #000000;
+}
+.pc nav ul li a:hover {
+  color: blue;
 }
 
 .pc .header-buttons {
@@ -372,6 +394,7 @@ main .buttons .btn-1 {
   font-weight: 500;
   background: #f2f4f5;
   border-radius: 1.5rem;
+  border-style: none;
 }
 
 main .buttons .btn-2 {
@@ -384,6 +407,7 @@ main .buttons .btn-2 {
   font-weight: 500;
   background: #f2f4f5;
   border-radius: 1.5rem;
+  border-style: none;
 }
 
 main .buttons .btn-3 {
@@ -521,6 +545,7 @@ main footer hr {
 
 main footer p {
   text-align: center;
+
   font-size: 0.73vw;
 }
 

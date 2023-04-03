@@ -12,43 +12,7 @@
   <title>Picnic</title>
   <link rel="stylesheet" href="index.css">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <script type="module">
-    import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.2.3/ethers.min.js"
-    const connectButton = document.getElementById("wallet")
 
-    //show address if already connected
-    if (connectButton) {
-      connectButton.addEventListener("click", async () => {
-        if (window.ethereum) {
-          try {
-            const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
-
-            const address = accounts[0]
-            const web3Provider = new ethers.BrowserProvider(window.ethereum)
-
-            if (address) {
-              connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
-            }
-            console.log("wallet connect:", web3Provider)
-
-          } catch (err) {
-            console.error("connect error:", err)
-          }
-        } else {
-          console.error("no meatamask found")
-        }
-      })
-      //listen to account change
-      window.ethereum.on('accountsChanged', (accounts) => {
-        if (accounts.length === 0) {
-          connectButton.innerText = 'Connect Wallet'
-        } else {
-          const address = accounts[0]
-          connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
-        }
-      })
-    }
-  </script>
 </head>
 
 <body id="container">
@@ -225,9 +189,48 @@
     </footer>
   </main>
 
+  <script type="module">
+    import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.2.3/ethers.min.js"
+
+    const connectButton = document.getElementById("wallet")
+
+    //show address if already connected
+    if (connectButton) {
+      connectButton.addEventListener("click", async () => {
+        if (window.ethereum) {
+          try {
+            const accounts = await window.ethereum.request({ method: "eth_requestAccounts" })
+
+            const address = accounts[0]
+            const web3Provider = new ethers.BrowserProvider(window.ethereum)
+
+            if (address) {
+              connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
+            }
+            console.log("wallet connect:", web3Provider)
+
+          } catch (err) {
+            console.error("connect error:", err)
+          }
+        } else {
+          console.error("no meatamask found")
+        }
+      })
+      //listen to account change
+      window.ethereum.on('accountsChanged', (accounts) => {
+        if (accounts.length === 0) {
+          connectButton.innerText = 'Connect Wallet'
+        } else {
+          const address = accounts[0]
+          connectButton.innerText = address.slice(0, 6) + '...' + address.slice(-4)
+        }
+      })
+    }
+  </script>
+  <script src="./themeChange.js"></script>
 </body>
 
-<script src="./themeChange.js"></script>
+
 
 
 

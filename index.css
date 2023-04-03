@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
 ul,
 ol {
@@ -64,9 +69,25 @@ button:hover {
 
 .pc nav ul li a {
   color: #000000;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
 }
 .pc nav ul li a:hover {
-  color: blue;
+  color: black;
+  background-size: 0 3px, 100% 3px;
 }
 
 .pc .header-buttons {
@@ -91,6 +112,21 @@ button:hover {
   background: #ffffff;
   border: 1px solid #999999;
   border-radius: 10px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+.pc .header-buttons .wallet:hover {
+  background-position: right center;
+  background-image: linear-gradient(
+    to right,
+    #a1c4fd 0%,
+    #c2e9fb 51%,
+    #a1c4fd 100%
+  );
+  border-style: none;
 }
 
 main {
@@ -590,6 +626,15 @@ main footer p {
   width: 5rem;
   height: 1.5rem;
   border-style: none;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {

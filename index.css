@@ -37,7 +37,7 @@ button:hover {
 
 /* 黑夜主题 */
 #container[data-theme='dark'] {
-  background-color: #999999;
+  background-color: #303232;
   color: white;
 }
 

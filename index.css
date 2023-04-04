@@ -86,7 +86,6 @@ button:hover {
   transition: background-size 400ms;
 }
 .pc nav ul li a:hover {
-  color: black;
   background-size: 0 3px, 100% 3px;
 }
 

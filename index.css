@@ -133,7 +133,7 @@ main {
   flex-direction: column;
 }
 
-main .top-content {
+main .introduccation-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -152,13 +152,13 @@ main .slogan {
   font-weight: 600;
 }
 
-main .top-content .introduction p {
+main .introduccation-container .introduction p {
   font-size: 1.45vw;
   font-weight: 400;
   margin-top: 1.5rem;
 }
 
-main .top-content .introduction .write {
+main .introduccation-container .introduction .write {
   width: 15.9vmax;
   height: 7.8vmin;
   margin-top: 3rem;
@@ -169,7 +169,7 @@ main .top-content .introduction .write {
   border-radius: 1.5rem;
   border-style: none;
 }
-main .mid-content {
+main .title-content {
   display: flex;
   flex-direction: column;
   justify-content: space-center;
@@ -177,7 +177,7 @@ main .mid-content {
   margin-top: 1.5rem;
 }
 
-main .mid-content .title {
+main .title-content .title {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -187,19 +187,19 @@ main .mid-content .title {
   gap: 1rem;
 }
 
-main .mid-content .title .large-title {
+main .title-content .title .large-title {
   font-size: 5.2vw;
   font-weight: 600;
   font-style: italic;
 }
 
-main .mid-content .title .small-title {
+main .title-content .title .small-title {
   font-size: 1.4vw;
   font-weight: 400;
   font-style: italic;
 }
 
-main .mid-content .title .arrow {
+main .title-content .title .arrow {
   color: #666666;
 }
 
@@ -419,7 +419,7 @@ main .buttons {
   margin-right: 8rem;
 }
 
-main .buttons .btn-1 {
+main .buttons .btn-write {
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -432,7 +432,7 @@ main .buttons .btn-1 {
   border-style: none;
 }
 
-main .buttons .btn-2 {
+main .buttons .btn-discover {
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -445,7 +445,7 @@ main .buttons .btn-2 {
   border-style: none;
 }
 
-main .buttons .btn-3 {
+main .buttons .btn-sentence {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -453,7 +453,7 @@ main .buttons .btn-3 {
   background: #64f4ab;
   border-radius: 1.5rem;
 }
-main .buttons .btn-3 .sentence {
+main .buttons .btn-sentence .sentence {
   display: flex;
   font-size: 1.45vw;
   font-weight: 400;
@@ -495,7 +495,7 @@ main .about .about-content {
   width: 90.5vw;
 }
 
-main .about .about-content .about-left {
+main .about .about-content .about-words {
   display: flex;
   max-width: 50%;
   flex-direction: column;
@@ -503,20 +503,20 @@ main .about .about-content .about-left {
   align-items: center;
 }
 
-main .about .about-content .about-left h2 {
+main .about .about-content .about-words h2 {
   font-size: 2.19vw;
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
-main .about .about-content .about-left p {
+main .about .about-content .about-words p {
   font-size: 1.25vw;
   font-weight: 400;
   margin-bottom: 5.25rem;
   margin-top: 0.6875rem;
 }
 
-main .about .about-content .about-left button {
+main .about .about-content .about-words button {
   width: 15.9vmax;
   height: 7.8vmin;
   font-size: 1.56vw;
@@ -528,7 +528,7 @@ main .about .about-content .about-left button {
   border-radius: 1.5rem;
 }
 
-main .about .about-content .about-right {
+main .about .about-content .about-pic {
   position: relative;
   display: flex;
   max-width: 50%;
@@ -536,13 +536,13 @@ main .about .about-content .about-right {
   z-index: 0;
 }
 
-main .about .about-content .about-right .about-right-img {
+main .about .about-content .about-pic .about-pic-img {
   width: 37.9vw;
   border-radius: 1.5rem;
   z-index: 1;
 }
 
-main .about .about-content .about-right .metaverse {
+main .about .about-content .about-pic .metaverse {
   position: absolute;
   width: 34.16vw;
   height: 34.16vw;
@@ -550,7 +550,7 @@ main .about .about-content .about-right .metaverse {
   z-index: 5;
 }
 
-main .about .about-content .about-right .rectangle {
+main .about .about-content .about-pic .rectangle {
   position: absolute;
   width: 14vw;
   height: 14vw;
@@ -608,8 +608,12 @@ main footer p {
   top: 5%;
 }
 
-.mob .menu .li .a {
+.mob .menu li a {
   display: block;
+  color: #000000;
+}
+.mob .menu li a:hover {
+  text-decoration: underline;
 }
 
 .mob .menu-content .menu .wallet {
@@ -647,12 +651,12 @@ main footer p {
     align-items: center;
   }
 
-  main .top-content {
+  main .introduccation-container {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  main .top-content .poster img {
+  main .introduccation-container .poster img {
     max-width: 50vw;
   }
 
